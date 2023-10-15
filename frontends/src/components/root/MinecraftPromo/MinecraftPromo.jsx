@@ -2,7 +2,7 @@ import React from 'react';
 import './MinecraftPromo.css'
 
 // Import Images
-import minecraftBg from './minecraft-server.png';
+import minecraft_server from './minecraft-server.png';
 
 const MinecraftPromo = () => {
 
@@ -14,7 +14,7 @@ const MinecraftPromo = () => {
         <a href="/mc" className="join-button">Join Now</a>
     </div>
     <div className="image">
-        <img src={minecraftBg} alt="Minecraft Background"/>
+        <img src={minecraft_server} alt="Minecraft Background"/>
     </div>
 </div>
 
