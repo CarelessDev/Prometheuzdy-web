@@ -1,0 +1,60 @@
+---
+// Import CSS
+import '../styles/register.css';
+---
+
+<form id="register-form" class="register-form">
+    <h1 class="title">Create Account</h1>
+    
+    <input type="text" id="firstName" name="firstName" class="input" placeholder="First Name" required />
+    <input type="text" id="lastName" name="lastName" class="input" placeholder="Last Name" required />
+    <input type="email" id="email" name="email" class="input" placeholder="Email" required />
+    <input type="text" id="username" name="username" class="input" placeholder="Username" required />
+    <input type="password" id="password" name="password" class="input" placeholder="Password" required />
+    <input type="password" id="confirmPassword" name="confirmPassword" class="input" placeholder="Confirm Password" required />
+
+    <button type="submit" class="button">Register</button>
+</form>
+
+<script>
+document.getElementById('register-form').addEventListener('submit', function(e) {
+    // Prevent the default form submission
+    e.preventDefault();
+
+    // Get form data
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Send data as JSON
+    fetch('/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            username: username,
+            password: password,
+            confirmPassword: confirmPassword
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Handle success (e.g., navigate to a new page, show a success message, etc.)
+
+        // redirect to login page
+        window.location.href = '/auth/login';
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // Handle error (e.g., show an error message, etc.)
+    });
+});
+</script>

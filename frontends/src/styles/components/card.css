@@ -1,0 +1,14 @@
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    width: 20rem;
+    transition: opacity 1s ease;
+    min-height: 10rem;
+}
+  
+.card.visible {
+    opacity: 1;
+}

@@ -1,0 +1,36 @@
+.embed {
+    background-color: #bcb6b3;
+    width: fit-content;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border-color: #353543;
+    border-style: solid; 
+    width: 40rem;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 2rem;
+}
+
+.embed-techinfo p {
+    margin-bottom: 0.25rem;
+    text-decoration: underline;
+    
+}
+
+.embed-title h1 {
+    margin-bottom: 0.5rem;
+}
+
+.embed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.version img {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    margin-top: 0.225rem;
+    margin-bottom: 0.225rem;
+}

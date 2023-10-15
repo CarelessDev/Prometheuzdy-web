@@ -1,0 +1,31 @@
+---
+import { Promote } from "../components/root/Promote/Promote.jsx";
+import Card from "../components/card.jsx";
+import "../styles/index.css";
+import UserProfile from "../components/root/UserProfile/UserProfile.jsx";
+import LogOut from "../components/root/logout/logout.jsx";
+import MinecraftPromo from "../components/root/MinecraftPromo/MinecraftPromo.jsx";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Prometheuzdy Cloud</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+	</head>
+	<body>
+		<div class="banner">
+			<h1>Prometheuzdy</h1>
+
+			<div class="banner-link">
+				<a href="/auth/login" id="loginLink">Login</a>
+				<a href="/auth/register" id="registerLink">Register</a>
+				<UserProfile client:load />
+				<LogOut client:load/>
+			</div>	
+		</div>
+		<MinecraftPromo />
+
+		
+	</body>
+</html>

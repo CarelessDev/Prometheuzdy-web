@@ -1,0 +1,45 @@
+.minecraft-promo {
+    display: flex;
+    align-items: center;  /* Ensure this is the height you want */
+    color: white;
+    overflow: hidden;  /* Prevents inner content from overflowing */
+    background-color: #0d2307;
+}
+
+.info {
+    flex: 1;
+    padding: 50px;
+    text-align: left;
+}
+
+.info h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.join-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    max-width: 90%;
+    height: 32rem;
+    width: auto;  /* Ensures the image maintains its aspect ratio */
+}

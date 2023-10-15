@@ -1,0 +1,13 @@
+.logout {
+    /* Your CSS styles here */
+    
+}
+
+.logout a {
+    cursor: pointer;
+    /* Other styles for your <a> element */
+}
+
+.logout i {
+    /* Styles for your icon */
+}
