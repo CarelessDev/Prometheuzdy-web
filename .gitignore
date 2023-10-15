@@ -170,3 +170,4 @@ test.py
 .vscode/*
 
 environments/*
+docker-compose.yml
