@@ -30,8 +30,6 @@ from dotenv import load_dotenv
 from fastapi import HTTPException
 import os
 
-# Load environment variables from the specified file.
-load_dotenv("environments/auth.env")
 
 # Retrieve environment variables related to JWT.
 SECRET_KEY = os.getenv("SECRET_KEY")

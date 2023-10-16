@@ -6,6 +6,7 @@ from app.api.routes.auth import router as auth_router
 from app.api.routes.user import router as user_router
 from app.api.routes.mc import router as mc_router
 
+
 app = FastAPI()
 
 # Mount the static files directory
@@ -19,4 +20,4 @@ app.include_router(mc_router, tags=["mc"])
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(app, host="localhost", port=8001)
