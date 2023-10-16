@@ -8,8 +8,6 @@ to load environment variables from a file.
 Classes:
 - DBConfig: Manages database configuration settings and constructs the SQLAlchemy database URI.
 
-Functions:
-- load_dotenv: Loads environment variables from a specified file into the system environment.
 
 Variables:
 - POSTGRES_USER: The username used to authenticate with the PostgreSQL database.
@@ -24,10 +22,9 @@ Methods:
 
 from pydantic import SecretStr, PostgresDsn
 from pydantic_settings import BaseSettings
-from dotenv import load_dotenv
 
-# Load environment variables from the specified file.
-load_dotenv("environments/db.env")
+import os
+
 
 class DBConfig(BaseSettings):
     """
@@ -46,16 +43,12 @@ class DBConfig(BaseSettings):
     - sqlalchemy_database_uri(self) -> str: Constructs and returns the SQLAlchemy database URI.
     """
     
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: SecretStr
-    POSTGRES_HOST: str
-    POSTGRES_DB: str
+    POSTGRES_USER: str = os.environ.get("POSTGRES_USER")
+    POSTGRES_PASSWORD: SecretStr = SecretStr(os.environ.get("POSTGRES_PASSWORD"))
+    POSTGRES_HOST: str = os.environ.get("POSTGRES_HOST")
+    POSTGRES_DB: str = os.environ.get("POSTGRES_DB")
 
     SQLALCHEMY_DATABASE_URI: PostgresDsn = "postgresql://none:none@none:5432/none"
-
-    class Config:
-        # Specify the file path for environment variables.
-        env_file = "environments/db.env"
 
     @property
     def sqlalchemy_database_uri(self) -> str:

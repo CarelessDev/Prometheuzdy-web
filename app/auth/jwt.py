@@ -2,7 +2,7 @@
 auth/jwt.py
 
 This module is responsible for handling JSON Web Tokens (JWT) for user authentication within the FastAPI application. 
-It utilizes the python-jose library to encode and decode JWT, and python-dotenv to manage environment variables.
+It utilizes the python-jose library to encode and decode JWT.
 
 Functions:
 - create_access_token: Generates a JWT using user data and expiration details.
@@ -18,7 +18,6 @@ Dependencies:
 - datetime: A module to work with dates and times.
 - timedelta: A class for representing differences between dates.
 - Optional: A special typing construct to denote optional values.
-- load_dotenv: A function to load environment variables from a file.
 - HTTPException: An exception class for HTTP status codes.
 - os: A module providing a way of using operating system dependent functionality.
 """
@@ -26,15 +25,14 @@ Dependencies:
 from jose import JWSError, jwt
 from datetime import datetime, timedelta
 from typing import Optional
-from dotenv import load_dotenv
 from fastapi import HTTPException
 import os
 
 
 # Retrieve environment variables related to JWT.
-SECRET_KEY = os.getenv("SECRET_KEY")
-ALGORITHM = os.getenv("ALGORITHM")
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
+SECRET_KEY = os.environ.get("SECRET_KEY")
+ALGORITHM = os.environ.get("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ.get("ACCESS_TOKEN_EXPIRE_MINUTES"))
 
 def create_access_token(data: dict) -> str:
     """
