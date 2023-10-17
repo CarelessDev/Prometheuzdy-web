@@ -1,5 +1,5 @@
 """
-auth/models.py
+models/auth.py
 
 This module defines the data model for User entities within the application, utilizing SQLAlchemy as the ORM 
 (Object-Relational Mapper). The User model contains fields relevant for user authentication and identification.

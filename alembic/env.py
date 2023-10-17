@@ -1,3 +1,9 @@
+try:
+    from dotenv import load_dotenv
+    load_dotenv('secrets.env')
+except:
+    pass
+
 from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
@@ -7,6 +13,7 @@ from alembic import context
 
 # Import models 
 from app.models import auth
+from app.models import mc_server
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

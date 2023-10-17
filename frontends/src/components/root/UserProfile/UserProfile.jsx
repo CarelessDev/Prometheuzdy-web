@@ -8,7 +8,7 @@ export default function UserProfile() {
   useEffect(() => {
     const token = localStorage.getItem('access_token');
     if (token) {
-      fetch('/user', {
+      fetch('/api/user', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

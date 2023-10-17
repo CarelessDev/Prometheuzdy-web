@@ -7,6 +7,6 @@
 ```
 alembic revision --autogenerate -m "migration_name"
 
-alemibic upgrade head
+alembic upgrade head
 ```
 

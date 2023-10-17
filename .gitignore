@@ -171,3 +171,9 @@ test.py
 
 environments/*
 docker-compose.yml
+
+
+*.env
+*.sql
+
+alembic/versions/*
