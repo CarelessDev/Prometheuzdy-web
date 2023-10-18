@@ -5,7 +5,7 @@ from typing import List
 from app.models.mc_server import MCServer
 from app.schemas.mc_server import MCServerInfo
 
-def get_minecraft_server(db: Session = Depends(get_db)) -> List[MCServerInfo]:
+def get_minecraft_servers(db: Session = Depends(get_db)) -> List[MCServerInfo]:
     """
     Returns a list of all Minecraft servers by querying it from database.
     
