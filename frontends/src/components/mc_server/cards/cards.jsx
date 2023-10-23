@@ -6,7 +6,7 @@ export default function Cards(props) {
 
     useEffect(() => {
         // Fetch data from backend /mc_server/server_list
-        fetch("http://localhost:8000/mc_server/server_list", {
+        fetch("https://prometheuzdy.cloud/mc_server/server_list", {
             method: "GET",
         })
         .then(response => response.json())  // Convert the response to JSON

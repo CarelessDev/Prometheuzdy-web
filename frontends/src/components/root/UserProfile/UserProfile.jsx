@@ -8,6 +8,7 @@ export default function UserProfile() {
   useEffect(() => {
     const token = localStorage.getItem('access_token');
     if (token) {
+
       fetch('https://prometheuzdy.cloud/api/user', {
         headers: {
           'Authorization': `Bearer ${token}`
